@@ -20,7 +20,7 @@ const NewTour = () => {
     isPending,
     data: tour,
   } = useMutation({
-    mutationFn: async (destination) => {
+    mutationFn: async (destination: { city: string; country: string }) => {
       const existingTour = await getExistingTour(destination);
 
       if (existingTour) {
@@ -51,7 +51,10 @@ const NewTour = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const destination = Object.fromEntries(formData.entries());
+    const destination = Object.fromEntries(formData.entries()) as {
+      city: string;
+      country: string;
+    };
     mutate(destination);
   };
 
