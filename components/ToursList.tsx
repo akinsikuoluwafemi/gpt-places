@@ -4,9 +4,9 @@ import { JsonValue } from "@prisma/client/runtime/library";
 
 interface TourlistProps {
   data: {
-    // id: string;
-    // city: string;
-    // country: string;
+    id: string;
+    city: string;
+    country: string;
     // createdAt: Date;
     description: string;
     // image: string | null;
