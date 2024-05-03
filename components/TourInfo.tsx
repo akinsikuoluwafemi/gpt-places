@@ -11,7 +11,7 @@ interface TourInfoProps {
     title: string;
     description: string;
     image: string | null;
-    stops: JsonValue | any;
+    stops: any;
   };
 }
 
