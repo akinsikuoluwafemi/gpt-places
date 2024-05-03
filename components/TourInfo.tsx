@@ -15,7 +15,7 @@ interface TourInfoProps {
   };
 }
 
-const TourInfo = ({ tour }: TourInfoProps) => {
+const TourInfo = ({ tour }: TourInfoProps | any) => {
   const { title, description, stops } = tour;
   return (
     <div className="max-w-2xl">
