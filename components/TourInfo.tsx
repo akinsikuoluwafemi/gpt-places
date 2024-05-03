@@ -1,10 +1,17 @@
+import { JsonValue } from "@prisma/client/runtime/library";
 import React from "react";
 
 interface TourInfoProps {
   tour: {
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
+    city: string;
+    country: string;
     title: string;
     description: string;
-    stops: string[];
+    image: string | null;
+    stops: JsonValue | any;
   };
 }
 
@@ -15,7 +22,7 @@ const TourInfo = ({ tour }: TourInfoProps) => {
       <h1 className="text-4xl font-semibold mb-4">{title}</h1>
       <p className="leading-loose mb-6">{description}</p>
       <ul>
-        {stops.map((stop) => {
+        {stops?.map((stop: any) => {
           return (
             <li key={stop} className="mb-4 bg-base-100 p-4 rounded-xl">
               <p>{stop}</p>
